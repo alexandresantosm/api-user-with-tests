@@ -1,11 +1,4 @@
-interface IUser {
-  id?: string;
-  name: string;
-  username: string;
-  email: string;
-  createdAt?: Date;
-  updateAt?: Date;
-}
+import { IUser } from "./IUser";
 
 export class User {
   constructor({ name, username, email }: Readonly<IUser>) {
