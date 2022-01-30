@@ -1,6 +1,6 @@
 import { User } from '../../entities/User';
 import { IUsersRepository } from '../../repositories/IUsersRepositories';
-import { IUserDTO } from '../../dto/IUserDTO';
+import { IUserDTO, UserDTO } from '../../dto/UserDTO';
 
 export class CreateUserService {
   constructor (readonly usersRepository: IUsersRepository) {};
@@ -15,6 +15,8 @@ export class CreateUserService {
     const userToBeCreated = User.create({ name, email, username });
     const createdUser = await this.usersRepository.create(userToBeCreated);
 
-    return createdUser;
+    const userDTO = new UserDTO(createdUser);
+
+    return userDTO;
   }
 }
