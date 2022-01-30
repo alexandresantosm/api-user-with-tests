@@ -1,3 +1,4 @@
+import { IUserDTO } from "../dto/UserDTO";
 import { IUser } from "./IUser";
 
 export class User {
@@ -9,8 +10,8 @@ export class User {
     });
   }
 
-  static create({ name, username, email }: IUser) {
+  static create({ name, username, email }: IUserDTO): IUser {
     const user = new User({name, username, email});
-    return user;
+    return user as IUser;
   }
 }
