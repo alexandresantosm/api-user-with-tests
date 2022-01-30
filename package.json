@@ -6,6 +6,8 @@
   "author": "Alexandre Santos",
   "license": "MIT",
   "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
     "eslint": "^8.8.0",
@@ -18,10 +20,10 @@
   },
   "dependencies": {
     "@prisma/client": "3.8.1",
-    "@types/express": "^4.17.13",
     "dotenv": "^14.3.2",
     "dotenv-cli": "^4.1.1",
     "express": "^4.17.2",
-    "express-async-errors": "^3.1.1"
+    "express-async-errors": "^3.1.1",
+    "uuid": "^8.3.2"
   }
 }
