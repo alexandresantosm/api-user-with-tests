@@ -1,13 +1,12 @@
 import { v4 as uuid} from 'uuid';
 
 import { IUser } from "../../entities/IUser";
-import { User } from "../../entities/User";
 import { IUsersRepository } from "../IUsersRepositories";
 
 export class UsersRepositoryInMemory implements IUsersRepository {
   private users: Array<IUser> = [];
 
-  async create (user: IUser): Promise<User> {
+  async create (user: IUser): Promise<IUser> {
     Object.assign(user, {
       id: uuid(),
       createdAt: Date.now(),

@@ -1,12 +1,11 @@
 import { prisma } from '../../database/client';
 import { IUser } from '../../entities/IUser';
-import { User } from '../../entities/User';
 
 import { IUsersRepository } from '../IUsersRepositories';
 
 export class PrismaUsersRepository implements IUsersRepository {
 
-  async create ({ name, username, email }: IUser) : Promise<User> {
+  async create ({ name, username, email }: IUser) : Promise<IUser> {
     const newUser = prisma.user.create({
       data: {
         name,
