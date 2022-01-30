@@ -16,7 +16,7 @@
     "typescript": "^4.5.5"
   },
   "scripts": {
-    "dev": "ts-node-dev --exist-child src/server.ts"
+    "dev": "ts-node-dev --exit-child src/server.ts"
   },
   "dependencies": {
     "@prisma/client": "3.8.1",
