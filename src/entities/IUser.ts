@@ -4,5 +4,5 @@ export interface IUser {
   username: string;
   email: string;
   createdAt?: Date;
-  updateAt?: Date;
+  updatedAt?: Date;
 }
