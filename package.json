@@ -4,5 +4,8 @@
   "description": "Api CRUD users with tests units and integration",
   "main": "index.js",
   "author": "Alexandre Santos",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  }
 }
