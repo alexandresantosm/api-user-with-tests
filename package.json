@@ -1,0 +1,8 @@
+{
+  "name": "api_users_with_tests",
+  "version": "1.0.0",
+  "description": "Api CRUD users with tests units and integration",
+  "main": "index.js",
+  "author": "Alexandre Santos",
+  "license": "MIT"
+}
