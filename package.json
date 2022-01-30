@@ -17,6 +17,7 @@
     "dev": "ts-node-dev --exist-child src/server.ts"
   },
   "dependencies": {
+    "@prisma/client": "3.8.1",
     "@types/express": "^4.17.13",
     "dotenv": "^14.3.2",
     "dotenv-cli": "^4.1.1",
