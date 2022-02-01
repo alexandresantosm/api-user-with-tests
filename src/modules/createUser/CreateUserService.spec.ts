@@ -3,11 +3,21 @@ import { UsersRepositoryInMemory } from "../../repositories/in-memory/UsersRepos
 import { CreateUserService } from "./CreateUserService";
 
 describe("CreateUserService", () => {
-  it("Should be able to create a new user", async () => {
-    const usersRepositoryInMemory = new UsersRepositoryInMemory();
-    const createUserService = new CreateUserService(usersRepositoryInMemory);
+  const makeSut = () => {
+    const usersRepository = new UsersRepositoryInMemory();
+    const createUserService = new CreateUserService(usersRepository);
+    let userData: IUser = {} as IUser;
 
-    const userData: IUser = {
+    return {
+      createUserService,
+      userData,
+    };
+  };
+
+  it("Should be able to create a new user", async () => {
+    let { userData, createUserService } = makeSut();
+
+    userData = {
       name: "Test Name",
       email: "test@test.com",
       username: "testusername",
