@@ -7,7 +7,7 @@ export interface IUserDTO {
 }
 
 export class UserDTO {
-  constructor (user: IUser) {
+  constructor(user: IUser) {
     return {
       ...user,
       createdAt: user.createdAt?.toLocaleDateString(),
