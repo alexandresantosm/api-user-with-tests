@@ -28,4 +28,20 @@ describe("CreateUserService", () => {
     expect(user).toHaveProperty("id");
     expect(user.username).toBe(userData.username);
   });
+
+  it("Should not be able to create an existing user", async () => {
+    let { userData, createUserService } = makeSut();
+
+    userData = {
+      name: "Test Existing Name",
+      email: "testexisting@test.com",
+      username: "testexistingusername",
+    };
+
+    await createUserService.execute(userData);
+
+    await expect(createUserService.execute(userData)).rejects.toEqual(
+      new Error("User already exists!")
+    );
+  });
 });
