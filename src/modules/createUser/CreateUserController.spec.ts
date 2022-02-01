@@ -37,4 +37,17 @@ describe("CreateUserController", () => {
     expect(statusCode).toBe(400);
     expect(body.message).toBe("User already exists!");
   });
+
+  it("Should not be able to create an invalid user", async () => {
+    const invalidUser = {
+      name: "Invalid Test Integration",
+      username: "invalidusertestintegration",
+      age: 45,
+    };
+    const response = await request(app).post("/users").send(invalidUser);
+    const { statusCode, body } = response;
+
+    expect(statusCode).toBe(500);
+    expect(body.message).toContain("Internal server error");
+  });
 });
