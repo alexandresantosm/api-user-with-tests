@@ -1,6 +1,7 @@
 import { User } from "../../entities/User";
 import { IUsersRepository } from "../../repositories/IUsersRepositories";
 import { IUserDTO, UserDTO } from "../../dto/UserDTO";
+import { ExistsUserError } from "../../errors/ExistsUserError";
 
 export class CreateUserService {
   constructor(readonly usersRepository: IUsersRepository) {}
@@ -9,7 +10,7 @@ export class CreateUserService {
     const userAlreadyExists = await this.usersRepository.exists(username);
 
     if (userAlreadyExists) {
-      throw new Error("User already exists!");
+      throw new ExistsUserError("User already exists!");
     }
 
     const userToBeCreated = User.create({ name, email, username });
